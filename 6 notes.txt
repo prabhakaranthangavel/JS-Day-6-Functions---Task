@@ -1,0 +1,351 @@
+Contents:
+
+Introduction to functions
+function & return keyword
+types of function
+Arrow Functions ( ES6 Intro )
+
+*************************************************************************************************************************
+
+what is Functions?
+
+===>Set of statements that performs specific task.
+    ஒரு statment/code ஆனது குறிப்பிட்ட ஒரு task ஐ செய்ய வேண்டும் என்று கூறுவது  function ஆகும்.
+
+===>Another one it is called "block".
+
+===>Function is used for DRY(Don't Repeat Yourself)codes.
+    This is the use of the function.
+    ஒரு program க்கு வரும் output ஐ N times print செய்ய ஒரு function ஐ create செய்து அதில் logics ஐ கொடுத்து விட்டு அந்த function ஐ call செய்தால் மட்டும் போதும். 
+    அதனுடைய output வந்துவிடும்.
+    இது தான் function உடைய பயன்கள் ஆகும்.    
+
+===>This can reduce time and number of codes.
+    இதன் மூலம் time மற்றும் code களின் எண்ணிக்கைகளை குறைக்க முடியும்.
+
+===>Reuse in function.that's function using.
+    
+===>We can write more than more varibles,functions inside a function.
+
+===>Syntax:-
+    function functionname(parameter/arguments)
+    {
+        //set of statements that performs specific task
+    }
+    functionname(parameter/arguments);   //function call
+
+
+===>Example 1:function 
+
+    function mul(a,b)
+    {
+       console.log(a*b);
+    }
+    mul(1,2);        //2
+    mul(3,4);        //12
+    mul(5,6);        //30
+    mul(7,8);        //56
+
+
+===>Example 2:function without parameter
+
+    function greet() 
+    {
+      console.log("WELCOME");
+    }
+    greet();      //WELCOME
+   
+
+****Return****
+
+===>function always have a return value.
+    function எப்போதும் return key ஐ கொண்டிருக்கும்.
+
+===>To reduce the number of times code get executed.
+    இதன் மூலம் time மற்றும் code களின் எண்ணிக்கைகளை குறைக்க முடியும்.
+
+===>If we print without return it shows undefined.
+    If return key is not provided,processing will do it but the output is "undefined".It prints whenever we give it a console.
+    return key கொடுக்கவில்லை என்றால் processing நடக்கும்.
+    ஆனால் output "undefined" என்று மட்டுமே வரும்.
+
+===>One function will have only one return keyword.
+    ஒரு function க்குள் ஒரே ஒரு retrun key மட்டுமே கொடுக்க முடியும்.
+
+===>Console is used to see our output only.
+    console என்பது நம்முடைய ஐ பார்ப்பதற்காக மட்டும் பயன்படுத்தப்படுகிறது.
+
+===>In this 4 steps are importants of functions.
+
+    1.function name =>user defined
+    2.parameter     =>user defined
+    3.return keyword=>mandatory
+    4.function call =>declared the ***functionname(parameter/arguments)***
+
+===>Syntax:-
+    function functionname(parameter/arguments)
+    {
+        //set of statements that performs specific task
+    }
+    functionname(parameter/arguments);   //function call      
+
+===>Example 3:function with return key word
+
+    function mul(a,b)
+    {
+      return(a*b);
+    }
+    console.log(mul(1,2));        //2
+    console.log(mul(3,4));        //12
+    console.log(mul(5,6));        //30
+    console.log(mul(7,8));        //56
+
+
+===>Example 4:function without parameter with return key word
+
+    function greet() 
+    {
+      return ("WELCOME");
+    }
+    console.log(greet());      //WELCOME
+
+
+===>Example 5:function with return key word & DRY 
+
+    function multi(a, b, c, d) 
+    {
+      return a * b * c * d;
+    }
+    function add(a, b, c) 
+    {
+      return a + b + c;
+    }
+    function sub(a, b) 
+    {
+      return a - b;
+    }
+    console.log(sub(2, 1)); //1
+    console.log(add(1, 2, 2)); //5
+    console.log(multi(1, 2, 3, 4)); //24
+
+
+===>Example 6:
+    Method1:
+    Print the odd numbers in an array
+
+    var arr = [11, 12, 13, 14, 15, 16];
+    var result = [];
+    function odd(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+          result.push(arr[i]);
+        }
+    }
+    return result;
+    }
+    console.log(odd(arr));                //[11,13,15]
+    
+
+    Method2:
+    Print the odd numbers in an array
+
+    var arr = [11, 12, 13, 14, 15, 16];
+    var result = [];
+    function odd(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+          result.push(arr[i]);
+        }
+    }
+    return result;
+    }
+    odd(arr);
+    console.log(result);                  //[11,13,15]     
+
+    
+    Method3:
+    Print the odd numbers in an array
+
+    var result = [];
+    function odd(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+          result.push(arr[i]);
+        }
+    }
+    return result;
+    }
+    console.log(odd([11, 12, 13, 14, 15, 16]))      //[11,13,15]
+
+===>இவ்வாறு function call செய்யும் இடத்திலும் value ஐ கொடுத்து output ஐ பெறலாம்.
+
+*************************************************************************************************************************
+
+Types of Function:
+
+1.Anonymus Function        2.IIFE            3.Arrow Function
+
+
+what is Anonymus Function?
+
+===>Anonymus பெயர் தெரியாதவர்.
+
+===>A function without a function name is called Anonymus Function.
+    function name இல்லாத function ஐ Anonymus Function என்று அழைப்போம்.
+
+===>In this 4 steps are importants of functions.
+
+    1.parameter     =>user defined
+    2.return keyword=>mandatory
+    3.function call =>declared the ***variablename(parameter/arguments)***
+
+===>Syntax:
+
+    var/let/const variablename=function(parameter)
+    {
+      //set of statements that performs specific task
+    }
+    variblename(parameter/arguments);   //function call     
+
+
+===>Example1:Print the multiply numbers (without functionname===>Anonymus function)
+
+    let a = function(b,c)
+    {
+        return b*c;
+    }
+    console.log(a(5,6));     //30    
+
+
+===>Example2:Print the odd numbers in an array
+
+    let arr = [11,12,13,14,15];
+    let result = [];
+    let odd = function(arr)
+    {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+          result.push(arr[i]);
+        }
+      }
+      return result;
+    } 
+    console.log(odd(arr));    //[11,13,15]
+
+                *****************************************************************************************
+
+2.IIFE
+
+what is IIFE Function?
+
+===>IIFE stands for Immediately Invoked Function Expression
+
+===>No matter how many functions there are, the IIFE function is executed immediately or first.
+    Hence it is called Immediately Invoked Function Expression.
+    எத்தனை function இருந்தாலும் உடனடியாக அல்லது முதலாவதாக IIFE function தான் execute ஆகும். 
+    அதனால் தான் Immediately Invoked Function Expression என்று அழைக்கிறோம்.
+
+===>IIFE function can be called only once in a program.
+   ஒரு programல் IIFE Function ஐ ஒரு தடவை மட்டுமே call செய்ய முடியும்.
+
+===>We don't use return keyword in IIIFE function.
+    IIFE function ல் return key use பண்ண மாட்டோம்.
+
+===>Syntax
+    (function functionname(arguments/parameter))
+    {
+        //set of statements that performs specific task
+    }) (functioncall)
+
+
+====>Example:Print the odd numbers in an array
+
+(function odd(arr) 
+{
+  var result = [];
+ for (var i = 0; i < arr.length; i++) 
+ {
+    if(arr[i]%2!=0)
+    {
+       result.push(arr[i]);
+    }
+ }
+ console.log(result);
+})([11,12,13,14,15,16]);       //[11,13,15]
+    
+
+                *****************************************************************************************
+
+3.Arrow Function (ES6) 
+
+what is Arrow Function?
+
+===>Introduced in ES6.
+
+===>It has =>(arrow) keyword and return keyword is must.
+    => and return keyword கண்டிப்பாக பயன்படுத்த வேண்டும்.
+
+===>The code is executed in just a single line.
+
+===>In this function nick name of "Single Line Function".
+    இதனை Single Line Function என்றும் கூறலாம்.
+    காரணம் ஒரே வரியில் கூட இந்த எழுதலாம்
+
+===>It is a function that can be used a lot.
+    அதிகம் பயன்படுத்தக்கூடிய function ஆகும்.
+
+===>In this 4 steps are importants of functions.
+
+    1.parameter     =>user defined
+    2.arrow symbol  =>mandatory
+    3.return keyword=>mandatory
+    4.function call =>declared the ***variablename(parameter/arguments)***
+
+===>Syntax:
+
+    const variablename = (parameter)=>{
+                                        //set of statements that performs specific task
+                                      }
+    variablename(parameter/arguments);   //function call
+
+
+===>Example: without parameter
+
+    const wel = () =>{
+        return "WELCOME";
+    }
+    console.log(wel());        //WELCOME
+
+
+===>Example2:parameter with return keyword
+
+    const a = (abc) =>{
+        return abc*3;
+    }                                  
+    console.log(a(5));         //15
+
+
+===>Example3: 
+    const mul = (a,b,c)=>{
+       return a*b*c;
+    }
+    console.log(mul(1,2,3));        //6
+    console.log(mul(4,5,6));        //120
+    console.log(mul(7,8,9));        //504
+    console.log(mul(1,0,2));        //0
+
+
+===>Example4:Print the odd numbers in an array
+
+    const odd = (arr) => {
+       var result = [];
+       for (var i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 != 0) {
+             result.push(arr[i]);
+          }
+        }
+        return result;
+    }
+    console.log(odd([1, 2, 3, 4, 5, 6, 7, 8, 9]));    //output:[ 1, 3, 5, 7, 9 ]
+  
+*************************************************************************************************************************
